@@ -1,7 +1,16 @@
 THIS SRC FOLDER CONTAINS THE CODE MEANT FOR THE HUMAN INTERACTION TEAM OF PITO SALAS'S ROBOTICS LAB.
 
 DOCUMENTATION:
-(Because pocketsphinx is wrapped for Kinetic and has not been well documented, we have recorded the steps that we took in order to figure out the installation/setup/config.)
+Because pocketsphinx is wrapped for Kinetic and has not been well documented, we have recorded the steps that we took in order to figure out the installation/setup/config.
+
+This README.txt is supposed to be detailed so that future users of Kinetic Kame and voice recognition can use this as a guide to set it up properly on their machine.
+
+
+RESOURCES:
+Carnegie Mellon University's Decoder Tools:
+http://www.speech.cs.cmu.edu/tools/lmtool-new.html (generate language modeling files)
+http://www.speech.cs.cmu.edu/tools/lextool.html (generate pronunciations only)
+
 
 Speech to Text requires: pocketsphinx (see https://answers.ros.org/question/246247/speech-recognition-packages-for-ros-kinetic-kame/ for discussion on this, see https://github.com/Pankaj-Baranwal/pocketsphinx/ for implementation of package in Kinetic Kame, see http://www.pirobot.org/blog/0022/ for success but on a different distro)
 
@@ -15,7 +24,11 @@ Terminal:
   
 ...and you're all set for text to speech!
 
-NOTES:
+NOTES ON INSTALLATION / CONFIGURATION:
 A good chunk of what we posted here is recognizer.py. This is the fundamental code that runs pocketsphinx! SEE the small changes we made to -lm (because that's what we ended up using instead of -kws as that is an extra parameter that we don't use; only lm and dict is used.)
-LOOK AT LINE 61. The direct path for the config is specified, so if you want to run the launch file on your virtual machine then you'll have to specify where your dict file is (our case is 4707).
+LOOK AT LINE 61. The direct path for the config is specified, so if you want to run the launch file on your virtual machine then you'll have to specify where your lm file is (our case is 4707).
 pyttsx is like any other package. All you have to do is import it in your subscriber node and use it in your callback after listening to messages/strings published by pocketsphinx.
+
+
+Launching/Running Nodes and Publishing to the Topic:
+<TODO>
