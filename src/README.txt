@@ -1,4 +1,9 @@
-THIS SRC FOLDER CONTAINS THE CODE MEANT FOR THE HUMAN INTERACTION TEAM OF PITO SALAS'S ROBOTICS LAB.
+TODO: Heading and font formatting to make this document look nice
+
+ABOUT US:
+We are the human interaction team! (Ben, Jonas, and Rosie for the first 2 weeks)
+PURPOSE:
+This src folder contains code, testing code, basic examples, and project code meant for the human interface of the Brandeis Campus Rover project.
 
 DOCUMENTATION:
 Because pocketsphinx is wrapped for Kinetic and has not been well documented, we have recorded the steps that we took in order to figure out the installation/setup/config.
@@ -14,8 +19,21 @@ http://www.speech.cs.cmu.edu/tools/lextool.html (generate pronunciations only)
 
 Speech to Text requires: pocketsphinx (see https://answers.ros.org/question/246247/speech-recognition-packages-for-ros-kinetic-kame/ for discussion on this, see https://github.com/Pankaj-Baranwal/pocketsphinx/ for implementation of package in Kinetic Kame, see http://www.pirobot.org/blog/0022/ for success but on a different distro)
 
-<TODO: post notes on the steps on how to get it set up. Takes a lot of small and annoying steps.>
-POCKETSPHINX STEPS FOR INSTALLATION AND CONFIGURATION:
+************POCKETSPHINX STEPS FOR INSTALLATION AND CONFIGURATION****************
+1. For ROS Kinetic, you need to use this wrapper https://github.com/UTNuclearRoboticsPublic/pocketsphinx
+2. Follow the first 2 steps on the README.
+3. Step 3 you have to be really careful on:
+  3.1 First, locate where your pocketsphinx package has been downloaded to (mine was in the /usr/.../Python2.7 kind of folder, you
+  can look it up on your Linux search bar and see where exactly it is.
+  3.2 Next interesting thing...you need to sudo everything in your terminal from this point, because there is restricted access.
+  3.3 In the pocketsphinx folder, add a "hmm" directory and change the name of the "en-us" directory to "en_US". 
+  3.4 Copy the pocketsphinx package into /usr/share, theoretically you just need your model folder.
+  Remember if you're having trouble you need to sudo everything to bypass restricted permissions, don't do it on GUI.
+  YOU NEED TO HAVE THE EXACT PATH FOR THIS TO WORK.
+  
+4. If you made it this far, sweet. Do step 4.
+5. You have two changes left before things actually work. In recognizer.py of your catkin package, change the keywords file to a language model file and get rid of the associated kw file code. You should have sample code either given / you generated it on the CMU resource. Somewhere in the recognizer.py file you need to put your -lm file parameter. This also assumes that you have put your language model file in the catkin_ws already. (Also put the associated dict file in your dict directory)
+6. Lastly, go to your pocketsphinx.launch file. Get rid of the kw lines. In your -lm line, you need to put the direct path of your 
 
 
 Text to Speech requires: pyttsx (see https://pyttsx.readthedocs.io/en/latest/ for documentation, also see the Programming with ROS textbook for sample code on this package)
