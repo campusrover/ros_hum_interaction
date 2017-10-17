@@ -1,17 +1,18 @@
 TODO: Heading and font formatting to make this document look nice
 
-ABOUT US:
+#ABOUT US:
 We are the human interaction team! (Ben, Jonas, and Rosie for the first 2 weeks)
-PURPOSE:
+
+#PURPOSE:
 This src folder contains code, testing code, basic examples, and project code meant for the human interface of the Brandeis Campus Rover project.
 
-DOCUMENTATION:
+#DOCUMENTATION:
 Because pocketsphinx is wrapped for Kinetic and has not been well documented, we have recorded the steps that we took in order to figure out the installation/setup/config.
 
 This README.txt is supposed to be detailed so that future users of Kinetic Kame and voice recognition can use this as a guide to set it up properly on their machine.
 
 
-RESOURCES:
+**RESOURCES:**
 Carnegie Mellon University's Decoder Tools:
 http://www.speech.cs.cmu.edu/tools/lmtool-new.html (generate language modeling files)
 http://www.speech.cs.cmu.edu/tools/lextool.html (generate pronunciations only)
@@ -33,7 +34,9 @@ Speech to Text requires: pocketsphinx (see https://answers.ros.org/question/2462
   
 4. If you made it this far, sweet. Do step 4.
 5. You have two changes left before things actually work. In recognizer.py of your catkin package, change the keywords file to a language model file and get rid of the associated kw file code. You should have sample code either given / you generated it on the CMU resource. Somewhere in the recognizer.py file you need to put your -lm file parameter. This also assumes that you have put your language model file in the catkin_ws already. (Also put the associated dict file in your dict directory)
-6. Lastly, go to your pocketsphinx.launch file. Get rid of the kw lines. In your -lm line, you need to put the direct path of your 
+6. Lastly, go to your pocketsphinx.launch file. Get rid of the kw lines. In your -lm line, you need to put the direct path of your dict file.
+
+That's it, you're done and hopefully it works. The steps above are so small and specific but it may not work if you don't set it up correctly.
 
 
 Text to Speech requires: pyttsx (see https://pyttsx.readthedocs.io/en/latest/ for documentation, also see the Programming with ROS textbook for sample code on this package)
