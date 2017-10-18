@@ -43,6 +43,11 @@ Text to Speech requires: pyttsx (see https://pyttsx.readthedocs.io/en/latest/ fo
 Terminal:
   pip install pyttsx
   
+(You need to have pip already installed as well, for specifically Ubuntu 16.04 type into your terminal:
+  sudo apt-get update && sudo apt-get -y upgrade
+  sudo apt-get install python-pip
+)
+
 ...and you're all set for text to speech!
 
 NOTES ON INSTALLATION / CONFIGURATION:
