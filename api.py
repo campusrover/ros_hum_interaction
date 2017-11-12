@@ -56,17 +56,23 @@ class cmd(Resource):
 		if request.form['data'] == 'stop':
 			cmd_vel.publish(Twist())
 
+class cmdHTML(Resource):
+	def get(self):
+		if request.args.get('cmd') == 'stop':
+			cmd_vel.publish(Twist())
+			return make_response(render_template('cmd.html'))
 
 api.add_resource(ats, '/ats')
 api.add_resource(location, '/location')
 api.add_resource(cmd, '/cmd')
 api.add_resource(atsHTML, '/robot/ats')
 api.add_resource(locationHTML, '/robot/location')
+api.add_resource(cmdHTML, '/robot/cmd')
 
 if __name__ == '__main__':
 	#app.run(debug=True)
 	#change host ip when you want to use on different device
-	t = Thread(target=app.run, kwargs={'host' : '192.168.204.137'})
+	t = Thread(target=app.run, kwargs={'host' : '129.64.153.118'})
 	t.daemon = True
 	#t.start() runs flask as its own thread
 	t.start()
