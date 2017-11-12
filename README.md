@@ -24,12 +24,16 @@ This repository may be used as a ROS package with regards to our initial project
   - (FOR next generation Human Interaction Teams): Refer to my Google Docs Lab Notebook (Jonas Tjahjadi) to see
     exactly all the steps that we have taken.
     
-  All of this has concluded that we need more powerful hardware. 
+  To reuse any of the alt-src code, create a new package with rospy and std_msgs dependencies, and drag all of the
+  code to the src folder of your package.
+  
+  All of this has concluded that we need more powerful hardware.
+  Outside dependencies needed: pyttsx, pocketsphinx
   
   Our second alternative solution uses the 'templates' folder and 'api.py', in which you must create a separate package
   to test this out in ROS. 'templates' has to be in the same directory as api.py so that'll probably mean
   you put it in your src folder of your new package.
-  
+  Outside dependencies needed: Flask, RESTful for Flask
 Topics of Implementation Include:
   1. ROS Kinetic
   2. Pocketsphinx Speech-to-Text
