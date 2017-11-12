@@ -1,3 +1,5 @@
+#!/usr/bin/env python 
+
 from flask import Flask, request, render_template, make_response
 from flask_restful import Resource, Api
 import rospy
@@ -63,8 +65,10 @@ api.add_resource(locationHTML, '/robot/location')
 
 if __name__ == '__main__':
 	#app.run(debug=True)
+	#change host ip when you want to use on different device
 	t = Thread(target=app.run, kwargs={'host' : '192.168.204.137'})
 	t.daemon = True
+	#t.start() runs flask as its own thread
 	t.start()
 	rospy.init_node('talker')
 	rospy.spin()
