@@ -78,8 +78,10 @@ class soundHTML(Resource):
 			t = Thread(target=playsound, args=('/home/bwinschel/Desktop/siren.mp3',))
 			t.start()
 			return make_response(render_template('sound.html'))
-			
 
+class homeHTML(Resource):
+	def get(self):
+		return make_response(render_template('home.html'))
 
 api.add_resource(ats, '/ats')
 api.add_resource(location, '/location')
@@ -88,6 +90,7 @@ api.add_resource(atsHTML, '/robot/ats')
 api.add_resource(locationHTML, '/robot/location')
 api.add_resource(cmdHTML, '/robot/cmd')
 api.add_resource(soundHTML, '/robot/sound')
+api.add_resource(homeHTML, '/')
 
 if __name__ == '__main__':
 	#app.run(debug=True)
