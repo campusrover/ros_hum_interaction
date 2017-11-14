@@ -65,5 +65,19 @@ LOOK AT LINE 61. The direct path for the config is specified, so if you want to 
 pyttsx is like any other package. All you have to do is import it in your subscriber node and use it in your callback after listening to messages/strings published by pocketsphinx.
 
 
-Launching/Running Nodes and Publishing to the Topic:
-<TODO>
+## Launching/Running Nodes and Publishing to the Topic:
+Change roslaunch launch file in launch subfolder to only include _dict arg, pointing it to where the .dic file is as generated from the above site. The other arguments will be refernce from inside the recognizer.py file itself.
+
+Individual words will be published to the 'voice' topic, as specified in recognizer.py. This can be changed to any topic that you would like, and you just have to change to subscribers to that topic.
+
+To launch everything as a ROS node, just run roslaunch *name_of_ROS_package* *name_of_launch_file*. This will start the publishing of pocketsphinx data onto the specified topic, which you can subscribe to. An example of this is in voice.py, which sets up a subscriber to the voice node and has a callback which calls the pyttsx runAndWait() method to respond. __Important Note: This method of feeding data from pocketsphinx into a ROS callback does not work on the Raspberry Pi. This is due to a threading issue with the pyttsx runAndWait() method.__
+
+
+## Problems Relating to Raspberry Pi and TB3.
+Since we were running our code on a Turtlebot 3, which is equipped with a Raspberry Pi, we ran into the issue of inadequate hardware. In order to save yourself a headache, take note that this solution does not work at all on the hardware described, and none of our workarounds produced viable results.
+These included:
+1. Python multiprocessing.
+2. Python multithreading.
+3. Using an alternative TTS module, such as espeak or festival.
+
+For the future, it would be useful to consider a more powerful SOC, perhaps one made by UDOO, which uses x86 architecture instead the ARM architecture used by the Pi. 
