@@ -1,5 +1,16 @@
 # Repository Notes / HOW TO USE:
 
+**ABOUT US:**
+We are the human interaction team! We worked on this project from October to November. This project was done in an independent study with Professor Salas, but will be reused for the next generation of developers in Autonomous Robotics Lab (COSI 119A).
+
+**Contributors:**
+Ben Winschel
+Jonas Tjahjadi
+Rosalind Ellis (first two weeks)
+
+**Project Advisor:**
+Professor Pito Salas
+
 This repository may be used as a ROS package with regards to our initial project:
   "Getting a TurtleBot3 to speak without using a Cloud Service"
   Note that if you want to use that portion of the project, you only need the 'src' folder, CMakeLists.txt,
