@@ -1,17 +1,6 @@
 # Human Interaction on the TurtleBot3 Using Voice Recognition
 *Note: Project runs on ROS Kinetic on VirtualBox/VMWare Ubuntu 16.04
 
-**ABOUT US:**
-We are the human interaction team! We worked on this project from October to November. This project was done in an independent study with Professor Salas, but will be reused for the next generation of developers in Autonomous Robotics Lab (COSI 119A).
-
-**Contributors:**
-Ben Winschel
-Jonas Tjahjadi
-Rosalind Ellis (first two weeks)
-
-**Project Advisor:**
-Professor Pito Salas
-
 ## PURPOSE:
 This src folder contains code, testing code, basic examples, and project code meant for the human interface of the Brandeis Campus Rover project.
 
